@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of La Min Maung – Mechatronics Engineering student specializing in Embedded Systems, PCB Design and AI applications.">
+
 <title>La Min Maung | Portfolio</title>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -10,22 +12,39 @@
 
 <style>
 html { scroll-behavior: smooth; }
-body { background: #0f172a; color: #e2e8f0; }
+body { transition: background 0.3s, color 0.3s; padding-top: 70px; }
 .section { padding: 80px 20px; }
-.card { background: #111827; border-radius: 10px; padding: 20px; margin-top: 15px; }
+.card { border-radius: 10px; padding: 20px; margin-top: 15px; transition: transform 0.3s; }
+.card:hover { transform: scale(1.02); }
+.dark { background: #0f172a; color: #e2e8f0; }
+.light { background: #f1f5f9; color: #0f172a; }
 </style>
 </head>
 
-<body>
+<body class="dark" id="body">
+
+<!-- NAVBAR -->
+<nav class="p-4 bg-gray-900 text-white text-center fixed w-full top-0 z-50 flex justify-center gap-6">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+
+  <button onclick="toggleTheme()" class="ml-4 bg-blue-600 px-3 py-1 rounded">
+    Toggle Theme
+  </button>
+</nav>
 
 <!-- HERO -->
 <section class="section text-center">
-<img src="profile.jpg" class="mx-auto rounded-full w-40 mb-4" data-aos="fade-down">
+<img src="assets/profile.jpg" class="mx-auto rounded-full w-40 mb-4 shadow-lg" data-aos="fade-down">
+
 <h1 class="text-4xl font-bold">La Min Maung</h1>
-<p class="text-xl mt-2 text-blue-400">Electrical & Mechatronics Engineer</p>
+<p class="text-xl mt-2 text-blue-400">Mechatronics Engineering Student | Embedded Systems Enthusiast</p>
 
 <p class="mt-4 max-w-3xl mx-auto">
-Driven Electrical-Mechatronics Engineer passionate about embedded systems, PCB design, robotics, automation and AI-driven solutions. Focused on building intelligent hardware-software systems that solve real-world problems.
+Driven Electrical-Mechatronics Engineering student passionate about embedded systems, PCB design, robotics, automation and AI-driven solutions. Focused on building intelligent hardware-software systems that solve real-world problems.
 </p>
 
 <div class="mt-4">
@@ -33,36 +52,32 @@ Driven Electrical-Mechatronics Engineer passionate about embedded systems, PCB d
 </div>
 </section>
 
-
 <!-- ABOUT -->
 <section id="about" class="section" data-aos="fade-up">
 <h2 class="text-3xl font-bold text-blue-400">About Me</h2>
 <p class="mt-4">
-Detail-oriented engineer with expertise in embedded systems, PCB design, automation, robotics and applied AI. Experienced in hardware-software integration, problem solving and collaborative engineering development.
+Detail-oriented engineering student with expertise in embedded systems, PCB design, automation, robotics and applied AI. Experienced in hardware-software integration, problem solving and collaborative engineering development.
 </p>
 </section>
-
 
 <!-- EDUCATION -->
 <section class="section" data-aos="fade-up">
 <h2 class="text-3xl font-bold text-blue-400">Education</h2>
 
-<div class="card">
+<div class="card bg-gray-800">
 <h3 class="text-xl font-semibold">King Mongkut’s Institute of Technology Ladkrabang</h3>
 <p>Bachelor of Electrical Engineering (Mechatronics)</p>
 <p>Expected Graduation: April 2027</p>
-<p>CGPA: 3.8 / 4.0</p>
 </div>
 </section>
 
-
 <!-- SKILLS -->
-<section class="section" data-aos="fade-up">
+<section id="skills" class="section" data-aos="fade-up">
 <h2 class="text-3xl font-bold text-blue-400">Skills</h2>
 
 <div class="grid md:grid-cols-2 gap-4 mt-4">
 
-<div class="card">
+<div class="card bg-gray-800">
 <h3 class="font-bold">Technical Skills</h3>
 <ul class="list-disc ml-5">
 <li>C, C++, C#, Python</li>
@@ -76,7 +91,7 @@ Detail-oriented engineer with expertise in embedded systems, PCB design, automat
 </ul>
 </div>
 
-<div class="card">
+<div class="card bg-gray-800">
 <h3 class="font-bold">Soft Skills</h3>
 <ul class="list-disc ml-5">
 <li>Leadership</li>
@@ -91,67 +106,74 @@ Detail-oriented engineer with expertise in embedded systems, PCB design, automat
 </div>
 </section>
 
-
-<!-- PROJECTS -->
+<!-- PROJECTS WITH FILTERING -->
 <section id="projects" class="section" data-aos="fade-up">
 <h2 class="text-3xl font-bold text-blue-400">Projects</h2>
 
-<div class="card">
+<div class="mt-4">
+  <button onclick="filterProjects('all')" class="bg-blue-600 px-3 py-1 rounded m-1">All</button>
+  <button onclick="filterProjects('embedded')" class="bg-blue-600 px-3 py-1 rounded m-1">Embedded</button>
+  <button onclick="filterProjects('ai')" class="bg-blue-600 px-3 py-1 rounded m-1">AI</button>
+  <button onclick="filterProjects('robotics')" class="bg-blue-600 px-3 py-1 rounded m-1">Robotics</button>
+</div>
+
+<div id="projectList">
+
+<div class="card bg-gray-800 project embedded robotics">
 <h3 class="font-bold">Autonomous Water Cleaning Robot</h3>
 <p>ESP8266 based robotic system with solar power, sensors and scheduling to automate water surface cleaning.</p>
 <a class="text-blue-400" href="https://github.com/LaMinMaung193/Autonomous-Water-Cleaning-Robot.git">GitHub Link</a>
 </div>
 
-<div class="card">
+<div class="card bg-gray-800 project ai">
 <h3 class="font-bold">Manipulator Health Monitoring - EDA</h3>
 <p>Data analysis on UR5 robotic sensor data with preprocessing and fault detection pipeline.</p>
 <a class="text-blue-400" href="https://github.com/LaMinMaung193/Manipulator-Health-Monitoring-EDA.git">GitHub Link</a>
 </div>
 
-<div class="card">
+<div class="card bg-gray-800 project embedded">
 <h3 class="font-bold">Greenhouse Monitoring System</h3>
 <p>IoT-based automation system using Arduino MKR 1010 for environmental control.</p>
+<p class="text-sm text-gray-400">Tech: Arduino, Sensors, Automation</p>
 </div>
 
-<div class="card">
+<div class="card bg-gray-800 project robotics">
 <h3 class="font-bold">3DoF SCARA Robot</h3>
 <p>Designed robotic arm with inverse kinematics and trajectory control.</p>
+<p class="text-sm text-gray-400">Tech: MATLAB, Kinematics, Control</p>
 </div>
 
+</div>
 </section>
 
-
 <!-- EXPERIENCE -->
-<section class="section" data-aos="fade-up">
+<section id="experience" class="section" data-aos="fade-up">
 <h2 class="text-3xl font-bold text-blue-400">Experience</h2>
 
-<div class="card">
+<div class="card bg-gray-800">
 <h3 class="font-bold">Teaching Assistant – KMITL</h3>
 <p>Physics Laboratory & Engineering Programming</p>
 <p>Supported 480+ lab hours, mentoring 200+ students in programming and electronics.</p>
 </div>
 
-<div class="card">
+<div class="card bg-gray-800">
 <h3 class="font-bold">Junior AI Software Developer</h3>
 <p>Worked on LLM-based industry solutions, architecture design and system integration.</p>
 </div>
 
-<div class="card">
+<div class="card bg-gray-800">
 <h3 class="font-bold">Research Co-Author</h3>
 <p>Journal Manuscript – Advanced Engineering Informatics (Elsevier)</p>
 </div>
 
 </section>
 
-
 <!-- CONTACT -->
 <section id="contact" class="section text-center" data-aos="fade-up">
 <h2 class="text-3xl font-bold text-blue-400">Contact</h2>
 
-<p class="mt-4">Email: 
-<a class="text-blue-400" href="mailto:iamlaminmaung193@gmail.com">
-iamlaminmaung193@gmail.com
-</a>
+<p class="mt-4">
+Email: <a class="text-blue-400" href="mailto:iamlaminmaung193@gmail.com">iamlaminmaung193@gmail.com</a>
 </p>
 
 <p class="mt-2">
@@ -160,13 +182,39 @@ iamlaminmaung193@gmail.com
 </p>
 </section>
 
-
 <footer class="text-center p-4">
 © 2025 La Min Maung
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+AOS.init();
+
+function toggleTheme() {
+  const body = document.getElementById("body");
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    body.classList.add("light");
+  } else {
+    body.classList.remove("light");
+    body.classList.add("dark");
+  }
+}
+
+function filterProjects(category) {
+  let projects = document.getElementsByClassName("project");
+
+  for (let p of projects) {
+    if (category === "all") {
+      p.style.display = "block";
+    } else if (p.classList.contains(category)) {
+      p.style.display = "block";
+    } else {
+      p.style.display = "none";
+    }
+  }
+}
+</script>
 
 </body>
 </html>
