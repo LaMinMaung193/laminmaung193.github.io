@@ -3,7 +3,13 @@
 This repository hosts my personal portfolio website showcasing my background, skills, projects, and experience as an Electrical & Mechatronics Engineering student.
 
 ## Live Website
-https://laminmaung.pro
+- http://laminmaung.pro 
+- https://laminmaung.pro
+- www.laminmaung.pro
+- https://www.laminmaung.pro
+- http://www.laminmaung.pro
+
+`HTTP → redirects to HTTPS`
 
 ## About Me
 I am an Electrical-Mechatronics Engineering student at KMITL with strong interests in:
