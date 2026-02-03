@@ -41,7 +41,9 @@ body { transition: background 0.3s, color 0.3s; padding-top: 70px; }
 <img src="assets/profile.jpg" class="mx-auto rounded-full w-40 mb-4 shadow-lg" data-aos="fade-down">
 
 <h1 class="text-4xl font-bold">La Min Maung</h1>
-<p class="text-xl mt-2 text-blue-400">Mechatronics Engineering Student | ID: 66011547</p>
+<p class="text-xl mt-2 text-blue-400">
+Mechatronics Engineering Student | Embedded Systems Enthusiast
+</p>
 
 <p class="mt-4 max-w-3xl mx-auto">
 Driven Electrical-Mechatronics Engineering student passionate about embedded systems, PCB design, robotics, automation and AI-driven solutions. Focused on building intelligent hardware-software systems that solve real-world problems.
@@ -173,7 +175,7 @@ Detail-oriented engineering student with expertise in embedded systems, PCB desi
 <h2 class="text-3xl font-bold text-blue-400">Contact</h2>
 
 <p class="mt-2">
-<a class="text-blue-400" href="https://linkedin.com/in/la-min-maung-9268aa350/">LinkedIn</a> |
+<span id="linkedin"></span> |
 <a class="text-blue-400" href="https://github.com/LaMinMaung193">GitHub</a>
 </p>
 </section>
@@ -188,28 +190,24 @@ AOS.init();
 
 function toggleTheme() {
   const body = document.getElementById("body");
-  if (body.classList.contains("dark")) {
-    body.classList.remove("dark");
-    body.classList.add("light");
-  } else {
-    body.classList.remove("light");
-    body.classList.add("dark");
-  }
+  body.classList.toggle("dark");
+  body.classList.toggle("light");
 }
 
 function filterProjects(category) {
   let projects = document.getElementsByClassName("project");
-
   for (let p of projects) {
-    if (category === "all") {
-      p.style.display = "block";
-    } else if (p.classList.contains(category)) {
+    if (category === "all" || p.classList.contains(category)) {
       p.style.display = "block";
     } else {
       p.style.display = "none";
     }
   }
 }
+
+/* LinkedIn privacy protection */
+document.getElementById("linkedin").innerHTML =
+  '<a class="text-blue-400" href="https://linkedin.com/in/la-min-maung-9268aa350/" target="_blank">LinkedIn</a>';
 </script>
 
 </body>
