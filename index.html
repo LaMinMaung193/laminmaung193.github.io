@@ -1,219 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio of La Min Maung – Mechatronics Engineering student specializing in Embedded Systems, PCB Design and AI applications.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>La Min Maung | Portfolio</title>
+  <title>La Min Maung | Portfolio</title>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- SEO -->
+  <meta name="description" content="La Min Maung – Mechatronics Engineering student specializing in Embedded Systems, PCB Design, Robotics, and AI-driven solutions." />
+  <meta name="author" content="La Min Maung" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-<style>
-html { scroll-behavior: smooth; }
-body { transition: background 0.3s, color 0.3s; padding-top: 70px; }
-.section { padding: 80px 20px; }
-.card { border-radius: 10px; padding: 20px; margin-top: 15px; transition: transform 0.3s; }
-.card:hover { transform: scale(1.02); }
-.dark { background: #0f172a; color: #e2e8f0; }
-.light { background: #f1f5f9; color: #0f172a; }
-</style>
+  <!-- Open Graph -->
+  <meta property="og:title" content="La Min Maung | Engineering Portfolio" />
+  <meta property="og:description" content="Embedded systems, robotics, PCB design, and AI projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://laminmaung.pro" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { padding-top: 72px; transition: background 0.3s, color 0.3s; }
+    .section { padding: 80px 20px; }
+    .card { border-radius: 12px; padding: 20px; transition: transform 0.25s; }
+    .card:hover { transform: translateY(-4px); }
+    .dark { background:#0f172a; color:#e2e8f0; }
+    .light { background:#f8fafc; color:#0f172a; }
+  </style>
 </head>
 
-<body class="dark" id="body">
+<body id="body" class="dark">
 
 <!-- NAVBAR -->
-<nav class="p-4 bg-gray-900 text-white text-center fixed w-full top-0 z-50 flex justify-center gap-6">
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-
-  <button onclick="toggleTheme()" class="ml-4 bg-blue-600 px-3 py-1 rounded">
-    Toggle Theme
-  </button>
+<nav class="fixed top-0 w-full z-50 bg-gray-900 text-white">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <span class="font-bold">La Min Maung</span>
+    <div class="flex gap-4 items-center">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <button onclick="toggleTheme()" class="bg-blue-600 px-3 py-1 rounded text-sm">
+        Theme
+      </button>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="section text-center">
-<img src="assets/profile.jpg" class="mx-auto rounded-full w-40 mb-4 shadow-lg" data-aos="fade-down">
-
-<h1 class="text-4xl font-bold">La Min Maung</h1>
-<p class="text-xl mt-2 text-blue-400">Mechatronics Engineering Student | ID: 66011547</p>
-
-<p class="mt-4 max-w-3xl mx-auto">
-Driven Electrical-Mechatronics Engineering student passionate about embedded systems, PCB design, robotics, automation and AI-driven solutions. Focused on building intelligent hardware-software systems that solve real-world problems.
-</p>
-
-<div class="mt-4">
-<a href="#projects" class="bg-blue-600 px-4 py-2 rounded">View Projects</a>
-</div>
+<section class="section text-center" data-aos="fade-down">
+  <img src="assets/profile.jpg" alt="La Min Maung" class="mx-auto w-40 rounded-full shadow-lg mb-4" />
+  <h1 class="text-4xl font-bold">La Min Maung</h1>
+  <p class="text-blue-400 mt-2 text-lg">Mechatronics Engineering Student</p>
+  <p class="max-w-3xl mx-auto mt-4">
+    Passionate about embedded systems, PCB design, robotics, automation, and AI-driven engineering solutions.
+  </p>
+  <a href="#projects" class="inline-block mt-6 bg-blue-600 px-5 py-2 rounded">
+    View Projects
+  </a>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-blue-400">About Me</h2>
-<p class="mt-4">
-Detail-oriented engineering student with expertise in embedded systems, PCB design, automation, robotics and applied AI. Experienced in hardware-software integration, problem solving and collaborative engineering development.
-</p>
-</section>
-
-<!-- EDUCATION -->
-<section class="section" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-blue-400">Education</h2>
-
-<div class="card bg-gray-800">
-<h3 class="text-xl font-semibold">King Mongkut’s Institute of Technology Ladkrabang</h3>
-<p>Bachelor of Electrical Engineering (Mechatronics)</p>
-<p>Expected Graduation: April 2027</p>
-</div>
+  <h2 class="text-3xl font-bold text-blue-400">About Me</h2>
+  <p class="mt-4 max-w-4xl">
+    Detail-oriented engineering student experienced in hardware-software integration, applied AI, and real-world system design.
+  </p>
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="section" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-blue-400">Skills</h2>
-
-<div class="grid md:grid-cols-2 gap-4 mt-4">
-
-<div class="card bg-gray-800">
-<h3 class="font-bold">Technical Skills</h3>
-<ul class="list-disc ml-5">
-<li>C, C++, C#, Python</li>
-<li>Embedded Systems</li>
-<li>PCB Design (KiCad, EasyEDA)</li>
-<li>PLC Programming</li>
-<li>Robotics & Kinematics</li>
-<li>AI / Machine Learning</li>
-<li>3D Printing & CAD</li>
-<li>Git Version Control</li>
-</ul>
-</div>
-
-<div class="card bg-gray-800">
-<h3 class="font-bold">Soft Skills</h3>
-<ul class="list-disc ml-5">
-<li>Leadership</li>
-<li>Problem Solving</li>
-<li>Teamwork</li>
-<li>Communication</li>
-<li>Adaptability</li>
-<li>Project Management</li>
-</ul>
-</div>
-
-</div>
+  <h2 class="text-3xl font-bold text-blue-400">Skills</h2>
+  <div class="grid md:grid-cols-2 gap-6 mt-6">
+    <div class="card bg-gray-800">
+      <h3 class="font-bold mb-2">Technical</h3>
+      <ul class="list-disc ml-5 space-y-1">
+        <li>C / C++ / Python</li>
+        <li>Embedded Systems</li>
+        <li>PCB Design</li>
+        <li>Robotics & Control</li>
+        <li>AI / ML</li>
+        <li>Git & Linux</li>
+      </ul>
+    </div>
+    <div class="card bg-gray-800">
+      <h3 class="font-bold mb-2">Soft Skills</h3>
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Leadership</li>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+        <li>Communication</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- PROJECTS WITH FILTERING -->
+<!-- PROJECTS -->
 <section id="projects" class="section" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-blue-400">Projects</h2>
+  <h2 class="text-3xl font-bold text-blue-400">Projects</h2>
 
-<div class="mt-4">
-  <button onclick="filterProjects('all')" class="bg-blue-600 px-3 py-1 rounded m-1">All</button>
-  <button onclick="filterProjects('embedded')" class="bg-blue-600 px-3 py-1 rounded m-1">Embedded</button>
-  <button onclick="filterProjects('ai')" class="bg-blue-600 px-3 py-1 rounded m-1">AI</button>
-  <button onclick="filterProjects('robotics')" class="bg-blue-600 px-3 py-1 rounded m-1">Robotics</button>
-</div>
-
-<div id="projectList">
-
-<div class="card bg-gray-800 project embedded robotics">
-<h3 class="font-bold">Autonomous Water Cleaning Robot</h3>
-<p>ESP8266 based robotic system with solar power, sensors and scheduling to automate water surface cleaning.</p>
-<a class="text-blue-400" href="https://github.com/LaMinMaung193/Autonomous-Water-Cleaning-Robot.git">GitHub Link</a>
-</div>
-
-<div class="card bg-gray-800 project ai">
-<h3 class="font-bold">Manipulator Health Monitoring - EDA</h3>
-<p>Data analysis on UR5 robotic sensor data with preprocessing and fault detection pipeline.</p>
-<a class="text-blue-400" href="https://github.com/LaMinMaung193/Manipulator-Health-Monitoring-EDA.git">GitHub Link</a>
-</div>
-
-<div class="card bg-gray-800 project embedded">
-<h3 class="font-bold">Greenhouse Monitoring System</h3>
-<p>IoT-based automation system using Arduino MKR 1010 for environmental control.</p>
-<p class="text-sm text-gray-400">Tech: Arduino, Sensors, Automation</p>
-</div>
-
-<div class="card bg-gray-800 project robotics">
-<h3 class="font-bold">3DoF SCARA Robot</h3>
-<p>Designed robotic arm with inverse kinematics and trajectory control.</p>
-<p class="text-sm text-gray-400">Tech: MATLAB, Kinematics, Control</p>
-</div>
-
-</div>
+  <div class="mt-6 space-y-4">
+    <div class="card bg-gray-800">
+      <h3 class="font-bold">Autonomous Water Cleaning Robot</h3>
+      <p class="mt-1">ESP8266-based solar-powered robotic system.</p>
+      <a href="https://github.com/LaMinMaung193/Autonomous-Water-Cleaning-Robot.git"
+         target="_blank" rel="noopener noreferrer"
+         class="text-blue-400">
+        GitHub →
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-blue-400">Experience</h2>
-
-<div class="card bg-gray-800">
-<h3 class="font-bold">Teaching Assistant – KMITL</h3>
-<p>Physics Laboratory & Engineering Programming</p>
-<p>Supported 480+ lab hours, mentoring 200+ students in programming and electronics.</p>
-</div>
-
-<div class="card bg-gray-800">
-<h3 class="font-bold">Junior AI Software Developer</h3>
-<p>Worked on LLM-based industry solutions, architecture design and system integration.</p>
-</div>
-
-<div class="card bg-gray-800">
-<h3 class="font-bold">Research Co-Author</h3>
-<p>Journal Manuscript – Advanced Engineering Informatics (Elsevier)</p>
-</div>
-
+  <h2 class="text-3xl font-bold text-blue-400">Experience</h2>
+  <div class="card bg-gray-800 mt-4">
+    <h3 class="font-bold">Teaching Assistant – KMITL</h3>
+    <p>Physics Lab & Engineering Programming</p>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section text-center" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-blue-400">Contact</h2>
+  <h2 class="text-3xl font-bold text-blue-400">Contact</h2>
 
-<p class="mt-4">
-Email: <a class="text-blue-400" href="mailto:iamlaminmaung193@gmail.com">Gmail</a>
-</p>
+  <p class="mt-4">
+    Email:
+    <span id="email" class="text-blue-400 cursor-pointer"></span>
+  </p>
 
-<p class="mt-2">
-<a class="text-blue-400" href="https://linkedin.com/in/la-min-maung-9268aa350/">LinkedIn</a> |
-<a class="text-blue-400" href="https://github.com/LaMinMaung193">GitHub</a>
-</p>
+  <p class="mt-2">
+    <a href="https://linkedin.com/in/la-min-maung-9268aa350/"
+       target="_blank" rel="noopener noreferrer"
+       class="text-blue-400">LinkedIn</a>
+    |
+    <a href="https://github.com/LaMinMaung193"
+       target="_blank" rel="noopener noreferrer"
+       class="text-blue-400">GitHub</a>
+  </p>
 </section>
 
-<footer class="text-center p-4">
-© 2025 La Min Maung
+<footer class="text-center p-4 text-sm opacity-80">
+  © 2025 La Min Maung
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-AOS.init();
+<!-- Scripts -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script defer>
+  AOS.init();
 
-function toggleTheme() {
   const body = document.getElementById("body");
-  if (body.classList.contains("dark")) {
-    body.classList.remove("dark");
-    body.classList.add("light");
-  } else {
-    body.classList.remove("light");
-    body.classList.add("dark");
-  }
-}
 
-function filterProjects(category) {
-  let projects = document.getElementsByClassName("project");
-
-  for (let p of projects) {
-    if (category === "all") {
-      p.style.display = "block";
-    } else if (p.classList.contains(category)) {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
+  function toggleTheme() {
+    const next = body.classList.contains("dark") ? "light" : "dark";
+    body.className = next;
+    localStorage.setItem("theme", next);
   }
-}
+
+  const saved = localStorage.getItem("theme");
+  if (saved) body.className = saved;
+
+  // Email protection
+  const email = "iamlaminmaung193" + "@gmail.com";
+  const el = document.getElementById("email");
+  el.textContent = email;
+  el.onclick = () => location.href = "mailto:" + email;
 </script>
 
 </body>
